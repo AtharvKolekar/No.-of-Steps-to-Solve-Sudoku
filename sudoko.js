@@ -89,6 +89,8 @@ function selectTile() {
 
         if (solution[r][c] == numSelected.id) {
             this.innerText = numSelected.id;
+            numSelected.classList.remove("number-selected");
+            numSelected = null;
         }
         else {
             errors += 1;
