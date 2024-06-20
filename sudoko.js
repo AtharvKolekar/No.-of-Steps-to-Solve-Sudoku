@@ -1,9 +1,9 @@
-var numSelected = null;
-var tileSelected = null;
+let numSelected = null;
+let tileSelected = null;
 
-var errors = 0;
+let errors = 0;
 
-var board = [
+let board = [
     "--74916-5",
     "2---6-3-9",
     "-----7-1-",
@@ -15,7 +15,7 @@ var board = [
     "81--45---"
 ]
 
-var solution = [
+let solution = [
     "387491625",
     "241568379",
     "569327418",
@@ -27,7 +27,7 @@ var solution = [
     "812945763"
 ]
 
-window.onload = function() {
+window.onload = () => {
     setGame();
 }
 
@@ -68,9 +68,12 @@ function setGame() {
 function selectNumber(){
     if (numSelected != null) {
         numSelected.classList.remove("number-selected");
+        numSelected = null;
     }
-    numSelected = this;
-    numSelected.classList.add("number-selected");
+    else{
+        numSelected = this;
+        numSelected.classList.add("number-selected");
+    }
 }
 
 function selectTile() {
